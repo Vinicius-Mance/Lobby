@@ -1,0 +1,111 @@
+
+main {
+  width: 90%;
+  margin: 20px auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  @media (max-width: 1000px){
+    width: 95%;
+  }
+
+  #youtube {
+    @include iconeLink(red,1);
+  }
+
+  #youtubemusic {
+    @include iconeLink(red,2);
+  }
+
+  #emailpessoal {
+    @include iconeLink(#ee82ee,4,round);
+  }
+
+  #emailprofissonal {
+    @include iconeLink(#8080ff,5,round);
+  }
+
+  #googletradutor {
+    @include iconeLink(#8080ff,6);
+  }
+
+  #theuselessweb {
+    @include iconeLink(#f52887,14);
+  }
+
+  #outlook {
+    @include iconeLink(#2596be,8);
+  }
+
+  #fiap {
+    @include iconeLink(#ef0557,7,round);
+  }
+
+  #strobe {
+    @include iconeLink(#ef0557,13);
+  }
+
+  #nightwaveplaza {
+    @include iconeLink(#a7a6ee,3,round);
+  }
+
+  #azure {
+    @include iconeLink(#008ad7,9);
+  }
+
+  #rtings {
+    @include iconeLink(red,119,round);
+  }
+
+  #htmlcolorpick {
+    @include iconeLink(#de0032,11,round);
+  }
+
+  #spotify{
+    @include iconeLink(#1ed760,17);
+  }
+
+  #soundcloud{
+    @include iconeLink(#ff5a01,18);
+  }
+
+  #springinitializer{
+    @include iconeLink(#68bd45,10);
+  }
+
+  #pi{
+    @include iconeLink(#8080ff,16,round);
+    img {
+      background-color: white;
+    }
+  }
+
+  #w3schools{
+    @include iconeLink(none,12);
+    &:hover {
+      @include mudarCorTexto(red,green,blue);
+    }
+  }
+
+  #player {
+    @include iconeLink(none,99999);
+    width: 4rem;
+    margin: auto;
+  }
+
+  #muted {
+    @include iconeLink(none,99999);
+    color: #999999;
+    width: 4rem;
+    align-items: flex-end;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: normal;
+    position: relative;
+    margin-left: calc(50% - 2rem);
+    margin-right: calc(50% - 2rem);
+    bottom: calc(4rem + 10px);
+    z-index: 999;
+    background-color: rgba(0,0,0,0.4);
+  }
+}

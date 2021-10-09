@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Flamenco:wght@400&display=swap');
 @import "./items/links.scss";
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background-image: url(../img/bg-paisagem.jpg);
   background-color: rgba(0,0,0, 0.7);
@@ -12,94 +18,5 @@ body {
     background-image: url(../img/bg-retrato.png);
     background-size: auto;
   }
-
-  main {
-    width: 90%;
-    margin: 20px auto;
-    display: flex;
-    flex-flow: row wrap;
-
-    @media (max-width: 1000px){
-      width: 95%;
-    }
-
-    #youtube {
-      @include iconeLink(red);
-    }
-
-    #youtubemusic {
-      @include iconeLink(red);
-    }
-
-    #emailpessoal {
-      @include iconeLink(#ee82ee,round);
-    }
-
-    #emailprofissonal {
-      @include iconeLink(#8080ff,round);
-    }
-
-    #googletradutor {
-      @include iconeLink(#8080ff);
-    }
-
-    #theuselessweb {
-      @include iconeLink(#f52887);
-    }
-
-    #outlook {
-      @include iconeLink(#2596be);
-    }
-
-    #fiap {
-      @include iconeLink(#ef0557,round);
-    }
-
-    #strobe {
-      @include iconeLink(#ef0557);
-    }
-
-    #nightwaveplaza {
-      @include iconeLink(#a7a6ee,round);
-    }
-
-    #azure {
-      @include iconeLink(#008ad7);
-    }
-
-    #rtings {
-      @include iconeLink(red,round);
-    }
-
-    #htmlcolorpick {
-      @include iconeLink(#de0032,round);
-    }
-
-    #spotify{
-      @include iconeLink(#1ed760);
-    }
-
-    #soundcloud{
-      @include iconeLink(#ff5a01);
-    }
-
-    #springinitializer{
-      @include iconeLink(#68bd45);
-    }
-
-    #pi{
-      @include iconeLink(#8080ff,round);
-      img {
-        background-color: white;
-      }
-    }
-
-    #w3schools{
-      @include iconeLink(none);
-      &:hover {
-        @include mudarCorTexto(red,green,blue);
-      }
-    }
-
-  }
+  @import "./items/main.scss";
 }
