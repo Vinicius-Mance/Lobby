@@ -6,16 +6,60 @@ player.onclick = function () { toggleMusic(); }
 muted.onclick = function () { toggleMusic(); }
 
 let playing = false;
+
 const toggleMusic = () => {
 
   if (playing) {
     muted.style.display = "flex";
-    music.pause();
+    fadeOut();
     playing = false;
   } else {
     muted.style.display = "none";
-    music.play();
+    fadeIn();
     playing = true;
   }
 
+}
+
+var vol = 1;
+var interval = 30; // 200ms interval
+
+const fadeOut = () => {
+  var fade = setInterval(
+    function() {
+      if (playing) {
+        return;
+      } else if (vol > 1) {
+        vol = 1;
+      } else if (vol > 0.2) {
+        music.volume = vol;
+        vol -= 0.05;
+      } else if (vol > 0) {
+        music.volume = vol;
+        vol -= 0.01;
+      } else {
+        clearInterval(fade);
+        music.pause();
+      }
+    }, interval);
+}
+
+const fadeIn = () => {
+  music.play();
+  var fade = setInterval(
+    function() {
+      if (!playing) {
+        return;
+      } else if (vol < 0 ) {
+        vol = 0;
+      } else if (vol < 0.2) {
+        music.volume = vol;
+        vol += 0.01;
+      } else if (vol < 1) {
+        music.volume = vol;
+        vol += 0.05;
+      } else {
+        clearInterval(fade);
+      }
+    }, interval);
 }
