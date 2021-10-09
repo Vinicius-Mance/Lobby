@@ -1,26 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Flamenco:wght@300;400&display=swap');
-
-* {
-  border: solid 1px red;
-}
-
-@mixin iconeLink($img){
-  display: inline-block;
-  color: #fff;
-  text-decoration: none;
-  height: 3rem;
-  width: auto;
-  display: flex;
-  align-items: center;
-    img {
-      height: 100%;
-      max-width: 3rem;
-      @if $img == quadrado {
-        border-radius: 50%;
-      }
-
-    }
-}
+@import url('https://fonts.googleapis.com/css2?family=Flamenco:wght@400&display=swap');
+@import "./items/links.scss";
 
 body {
   background-image: url(../img/bg-paisagem.jpg);
@@ -28,6 +7,7 @@ body {
   background-blend-mode: overlay;
   font-size: 20px;
   background-size: cover;
+  font-family: 'Flamenco', cursive;
   @media (max-width: 1000px){
     background-image: url(../img/bg-retrato.png);
     background-size: auto;
@@ -37,74 +17,88 @@ body {
     width: 90%;
     margin: 20px auto;
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: row wrap;
+
+    @media (max-width: 1000px){
+      width: 95%;
+    }
 
     #youtube {
-      @include iconeLink(icone);
+      @include iconeLink(red);
     }
 
     #youtubemusic {
-      @include iconeLink(icone);
+      @include iconeLink(red);
     }
 
     #emailpessoal {
-      @include iconeLink(quadrado);
+      @include iconeLink(#ee82ee,round);
     }
 
     #emailprofissonal {
-      @include iconeLink(quadrado);
+      @include iconeLink(#8080ff,round);
     }
 
     #googletradutor {
-      @include iconeLink(q);
+      @include iconeLink(#8080ff);
     }
 
     #theuselessweb {
-      @include iconeLink(q);
+      @include iconeLink(#f52887);
     }
 
     #outlook {
-      @include iconeLink(q);
+      @include iconeLink(#2596be);
     }
 
     #fiap {
-      @include iconeLink(quadrado);
+      @include iconeLink(#ef0557,round);
     }
 
     #strobe {
-      @include iconeLink(q);
+      @include iconeLink(#ef0557);
     }
 
     #nightwaveplaza {
-      @include iconeLink(quadrado);
+      @include iconeLink(#a7a6ee,round);
     }
 
     #azure {
-      @include iconeLink(q);
+      @include iconeLink(#008ad7);
     }
 
     #rtings {
-      @include iconeLink(quadrado);
+      @include iconeLink(red,round);
     }
 
     #htmlcolorpick {
-      @include iconeLink(quadrado);
+      @include iconeLink(#de0032,round);
     }
 
     #spotify{
-      @include iconeLink(q);
+      @include iconeLink(#1ed760);
     }
 
     #soundcloud{
-      @include iconeLink(q);
+      @include iconeLink(#ff5a01);
     }
 
     #springinitializer{
-      @include iconeLink(q);
+      @include iconeLink(#68bd45);
     }
 
     #pi{
-      @include iconeLink(q);
+      @include iconeLink(#8080ff,round);
+      img {
+        background-color: white;
+      }
+    }
+
+    #w3schools{
+      @include iconeLink(none);
+      &:hover {
+        @include mudarCorTexto(red,green,blue);
+      }
     }
 
   }
