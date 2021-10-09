@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Flamenco:wght@300;400&display=swap');
+
+* {
+  border: solid 1px red;
+}
+
+@mixin iconeLink($img){
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  height: 3rem;
+  width: auto;
+  display: flex;
+  align-items: center;
+    img {
+      height: 100%;
+      max-width: 3rem;
+      @if $img == quadrado {
+        border-radius: 50%;
+      }
+
+    }
+}
+
+body {
+  background-image: url(../img/bg-paisagem.jpg);
+  background-color: rgba(0,0,0, 0.7);
+  background-blend-mode: overlay;
+  font-size: 20px;
+  background-size: cover;
+  @media (max-width: 1000px){
+    background-image: url(../img/bg-retrato.png);
+    background-size: auto;
+  }
+
+  main {
+    width: 90%;
+    margin: 20px auto;
+    display: flex;
+    flex-flow: column wrap;
+
+    #youtube {
+      @include iconeLink(icone);
+    }
+
+    #youtubemusic {
+      @include iconeLink(icone);
+    }
+
+    #emailpessoal {
+      @include iconeLink(quadrado);
+    }
+
+    #emailprofissonal {
+      @include iconeLink(quadrado);
+    }
+
+    #googletradutor {
+      @include iconeLink(q);
+    }
+
+    #theuselessweb {
+      @include iconeLink(q);
+    }
+
+    #outlook {
+      @include iconeLink(q);
+    }
+
+    #fiap {
+      @include iconeLink(quadrado);
+    }
+
+    #strobe {
+      @include iconeLink(q);
+    }
+
+    #nightwaveplaza {
+      @include iconeLink(quadrado);
+    }
+
+    #azure {
+      @include iconeLink(q);
+    }
+
+    #rtings {
+      @include iconeLink(quadrado);
+    }
+
+    #htmlcolorpick {
+      @include iconeLink(quadrado);
+    }
+
+    #spotify{
+      @include iconeLink(q);
+    }
+
+    #soundcloud{
+      @include iconeLink(q);
+    }
+
+    #springinitializer{
+      @include iconeLink(q);
+    }
+
+    #pi{
+      @include iconeLink(q);
+    }
+
+  }
+}
