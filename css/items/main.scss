@@ -4,9 +4,13 @@ main {
   margin: 20px auto;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   @media (max-width: 1000px){
     width: 95%;
+  }
+
+  #googlesearch {
+    @include iconeLink(red,0);
   }
 
   #youtube {
@@ -15,6 +19,10 @@ main {
 
   #youtubemusic {
     @include iconeLink(red,2);
+  }
+
+  #nightwaveplaza {
+    @include iconeLink(#a7a6ee,3,round);
   }
 
   #emailpessoal {
@@ -29,59 +37,24 @@ main {
     @include iconeLink(#8080ff,6);
   }
 
-  #theuselessweb {
-    @include iconeLink(#f52887,14);
+  #fiap {
+    @include iconeLink(#ef0557,7,round);
   }
 
   #outlook {
     @include iconeLink(#2596be,8);
   }
 
-  #fiap {
-    @include iconeLink(#ef0557,7,round);
-  }
-
-  #strobe {
-    @include iconeLink(#ef0557,13);
-  }
-
-  #nightwaveplaza {
-    @include iconeLink(#a7a6ee,3,round);
-  }
-
   #azure {
     @include iconeLink(#008ad7,9);
-  }
-
-  #rtings {
-    @include iconeLink(red,19,round);
-  }
-
-  #htmlcolorpick {
-    @include iconeLink(#de0032,11,round);
-  }
-
-  #spotify{
-    @include iconeLink(#1ed760,17);
-  }
-
-  #soundcloud{
-    @include iconeLink(#ff5a01,18);
   }
 
   #springinitializer{
     @include iconeLink(#68bd45,10);
   }
 
-  #pi{
-    @include iconeLink(#8080ff,16,round);
-    img {
-      background-color: white;
-    }
-  }
-
-  #github{
-    @include iconeLink(#68bd45,20);
+  #htmlcolorpick {
+    @include iconeLink(#de0032,11,round);
   }
 
   #w3schools{
@@ -91,8 +64,61 @@ main {
     }
   }
 
+  #strobe {
+    @include iconeLink(#ef0557,13);
+  }
+
+  #theuselessweb {
+    @include iconeLink(#f52887,14);
+  }
+
+  #pi{
+    @include iconeLink(#8080ff,15,round);
+    img {
+      background-color: white;
+    }
+  }
+
+  #spotify{
+    @include iconeLink(#1ed760,16);
+  }
+
+  #soundcloud{
+    @include iconeLink(#ff5a01,17);
+  }
+
+  #rtings {
+    @include iconeLink(red,18,round);
+  }
+
+  #github{
+    @include iconeLink(#1f6feb,19);
+  }
+
+  #reactnative{
+    @include iconeLink(#61d9fa,20);
+  }
+
+  #jsontojava{
+    @include iconeLink(#61d9fa,21);
+    &:hover{
+        img {
+          background-blend-mode: overlay;
+          border-radius: 20px;
+          background-color: rgba(255,255,255,0.1);
+        }
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+  }
+
+
+
   #player {
-    @include iconeLink(none,99999);
+    @include iconeLink(none,0);
     width: 4rem;
     position: absolute;
     left: calc(50% - 2rem);
@@ -102,7 +128,7 @@ main {
   }
 
   #muted {
-    @include iconeLink(none,99999);
+    @include iconeLink(none,0);
     color: #999999;
     width: 4rem;
     align-items: flex-end;
