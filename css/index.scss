@@ -13,6 +13,7 @@
 
 body {
   background-image: url(../img/bg-paisagem.jpg);
+  // background image source:  https://wallpaperaccess.com/download/animated-rain-1379508
   background-color: rgba(0,0,0, 0.7);
   background-blend-mode: overlay;
   font-size: 20px;
@@ -20,6 +21,7 @@ body {
   font-family: 'Flamenco', cursive;
   @media (max-width: 1000px){
     background-image: url(../img/bg-retrato.jpg);
+    //background image source : https://wallpaperaccess.com/full/2544862.jpg
     background-size: auto;
   }
   @import "./items/main.scss";
