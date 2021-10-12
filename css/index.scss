@@ -19,7 +19,7 @@ body {
   background-size: cover;
   font-family: 'Flamenco', cursive;
   @media (max-width: 1000px){
-    background-image: url(../img/bg-retrato.png);
+    background-image: url(../img/bg-retrato.jpg);
     background-size: auto;
   }
   @import "./items/main.scss";

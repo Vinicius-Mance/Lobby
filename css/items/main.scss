@@ -9,10 +9,6 @@ main {
     width: 95%;
   }
 
-  #googlesearch {
-    @include iconeLink(red,0);
-  }
-
   #youtube {
     @include iconeLink(red,1);
   }
@@ -21,86 +17,47 @@ main {
     @include iconeLink(red,2);
   }
 
-  #nightwaveplaza {
-    @include iconeLink(#a7a6ee,3,round);
-  }
-
-  #emailpessoal {
-    @include iconeLink(#ee82ee,4,round);
-  }
-
-  #emailprofissonal {
-    @include iconeLink(#8080ff,5,round);
-  }
-
   #googletradutor {
-    @include iconeLink(#8080ff,6);
-  }
-
-  #fiap {
-    @include iconeLink(#ef0557,7,round);
-  }
-
-  #outlook {
-    @include iconeLink(#2596be,8);
+    @include iconeLink(#8080ff,3);
   }
 
   #azure {
-    @include iconeLink(#008ad7,9);
+    @include iconeLink(#008ad7,4);
   }
 
   #springinitializer{
-    @include iconeLink(#68bd45,10);
+    @include iconeLink(#68bd45,5);
   }
 
   #htmlcolorpick {
-    @include iconeLink(#de0032,11,round);
+    @include iconeLink(#de0032,6,round);
   }
 
   #w3schools{
-    @include iconeLink(none,12);
+    @include iconeLink(none,7);
     &:hover {
       @include mudarCorTexto(red,green,blue);
     }
   }
 
-  #strobe {
-    @include iconeLink(#ef0557,13);
-  }
-
-  #theuselessweb {
-    @include iconeLink(#f52887,14);
-  }
-
-  #pi{
-    @include iconeLink(#8080ff,15,round);
-    img {
-      background-color: white;
-    }
-  }
-
   #spotify{
-    @include iconeLink(#1ed760,16);
+    @include iconeLink(#1ed760,8);
   }
 
   #soundcloud{
-    @include iconeLink(#ff5a01,17);
-  }
-
-  #rtings {
-    @include iconeLink(red,18,round);
+    @include iconeLink(#ff5a01,9);
   }
 
   #github{
-    @include iconeLink(#1f6feb,19);
+    @include iconeLink(#1f6feb,10);
   }
 
   #reactnative{
-    @include iconeLink(#61d9fa,20);
+    @include iconeLink(#61d9fa,11);
   }
 
   #jsontojava{
-    @include iconeLink(#61d9fa,21);
+    @include iconeLink(#61d9fa,12);
     &:hover{
         img {
           background-blend-mode: overlay;
