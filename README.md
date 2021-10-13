@@ -13,7 +13,9 @@ If that's your case, then you're lucky, because that's exactly what this is: a s
 
 ## Requirements:
 
-The project itself has no dependencies, however, for editing you'll require `SASS` installed on your PC, or a lot of pacience to deal with vanilla `CSS` (use `Bootstrap` or whatever, I'm not your father)
+The project itself has no dependencies, however, for editing you'll require `SASS` installed on your PC, or a lot of pacience to deal with vanilla `CSS` 
+
+(use `Boostrap`, `SASS`, or pure `CSS` whatever you want, I'm not your father)
 
 After cloning the repository, you'll need to set this file as your default new tab
 
@@ -32,7 +34,7 @@ I'd be happy to get new ideas and features
 
 This is a small personal project of mine
 
-None of the images used in project are mine, they're only placeholders for demonstration
+None of the media used in project are mine, they're only placeholders for demonstration
 
 If you have a issue with their use, contact me: [vinimanceprof@gmail.com](mailto:vinimanceprof@gmail.com) and I'll remove them 
 
