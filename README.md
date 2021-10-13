@@ -6,11 +6,11 @@ Do you hate common background images and want to personalize your browzing exper
 
 Do you have an unnecessary need for personalisation for everything you do even if it's not that optimal?
 
-If that's your case, then you're lucky, because that's exactly what this is!
+If that's your case, then you're lucky, because that's exactly what this is: a simple `HTML` with some `CSS` 
 
 ## Requirements:
 
-The project itself has no dependencies, however, for editing you'll require `SASS` installed on your PC, or a lot of pacience to deal with vanilla `CSS`
+The project itself has no dependencies, however, for editing you'll require `SASS` installed on your PC, or a lot of pacience to deal with vanilla `CSS` (use `Bootstrap` or whatever, I'm not your father)
 
 After cloning the repository, you'll need to set this file as your default new tab
 
