@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Flamenco:wght@400&display=swap');
+@font-face { font-family: Edo; src: url('../fonts/EdoSZ.ttf'); }
+
 @import "./items/links.scss";
 
 * {
@@ -6,6 +7,7 @@
   padding: 0;
   box-sizing: border-box;
   transition: 0.2s;
+  font-family: Edo;
     &:focus{
         outline: none;
     }
@@ -15,12 +17,37 @@ body {
   background-image: url(../img/bg-paisagem.jpg);
   background-color: rgba(0,0,0, 0.7);
   background-blend-mode: overlay;
-  font-size: 20px;
+  font-size: 25px;
   background-size: cover;
-  font-family: 'Flamenco', cursive;
+  height: 110vh;
   @media (max-width: 1000px){
     background-image: url(../img/bg-retrato.png);
     background-size: auto;
   }
   @import "./items/main.scss";
+
+  #player {
+    @include iconeLink(none,0);
+    width: 4rem;
+    position: absolute;
+    left: calc(50% - 2rem);
+    right: calc(50% - 2rem);
+    cursor: pointer;
+  }
+
+  #muted {
+    @include iconeLink(none,0);
+    color: #999999;
+    width: 4rem;
+    justify-content: center;
+    font-size: 2rem;
+    font-family: monospace;
+    position: absolute;
+    left: calc(50% - 2rem);
+    right: calc(50% - 2rem);
+    z-index: 999;
+    background-color: rgba(0,0,0,0.4);
+    cursor: pointer;
+  }
+
 }
