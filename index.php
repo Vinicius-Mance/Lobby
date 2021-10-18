@@ -1,3 +1,13 @@
+<?php
+
+  include './DB/autoload.php';
+
+  require("./DB/Links.php");
+
+  $linkDB = new \DB\Links();
+  $todoslinks = $linkDB->todos();
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -6,37 +16,16 @@
     <link rel="icon" href="./img/icon.png" >
     <link rel="stylesheet" href="./css/index.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Flamenco:wght@300;400&display=swap" as="style">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Flamenco:wght@300;400&display=swap">
     </head>
   </head>
   <body>
     <main>
-
-      <a id="youtube" href="https://www.youtube.com/feed/library">
-        <img src="./img/youtube.svg" alt="">
-        YouTube
-      </a>
-
-      <a id="youtubemusic" href="https://music.youtube.com">
-        <img src="./img/youtubemusic.svg" alt="">
-        Youtube Music
-      </a>
-
-      <a id="emailpessoal" href="https://mail.google.com/mail/u/0/#inbox">
-        <img src="./img/emailpessoal.jpeg" alt="">
-        Email Pessoal
-      </a>
-
-      <a id="emailprofissonal" href="https://mail.google.com/mail/u/1/#inbox">
-        <img src="./img/emailprofissional.jpg" alt="">
-        Email Profissional
-      </a>
-
-      <a id="googletradutor" href="https://translate.google.com/?hl=pt-BR">
-        <img src="./img/googletradutor.svg" alt="">
-        Google Tradutor
-      </a>
+    <?php foreach ($todoslinks as $links => $link) { ?>
+        <a class="iconeLink" href="<?php echo $link['link'] ?>">
+          <img src="./img/<?php echo $link['foto'] ?> " alt="<?php echo $link['nome'] ?>">
+          <?php echo $link['nome'] ?>
+        </a>
+    <?php } ?>
 
       <a id="theuselessweb" href="https://theuselessweb.com">
         <img src="./img/theuselessweb.svg" alt="">
@@ -126,6 +115,13 @@
           <source src="./audio/music.ogg" type="audio/mpeg">
         </audio>
       <div id="muted">\</div>
+
+      <form action="index.php" method="post" enctype="multipart/form-data">
+          <input type="text" name="nome">
+          <input type="text" name="link">
+          <input type="image" name="foto">
+          <button type="submit">Enviar</button>
+      </form>
 
     <script type="text/javascript" src="./js/index.js"></script>
   </body>

@@ -1,7 +1,5 @@
 @font-face { font-family: Edo; src: url('../fonts/EdoSZ.ttf'); }
 
-@import "./items/links.scss";
-
 * {
   margin: 0;
   padding: 0;
@@ -14,29 +12,55 @@
 }
 
 body {
-  background-image: url(../img/bg-paisagem.jpg);
+  background-image: url(../img/bg/paisagem.jpg);
   background-color: rgba(0,0,0, 0.7);
   background-blend-mode: overlay;
   font-size: 25px;
   background-size: cover;
   height: 110vh;
   @media (max-width: 1000px){
-    background-image: url(../img/bg-retrato.png);
-    background-size: auto;
+    background-image: url(../img/bg/retrato.jpg);
   }
   @import "./items/main.scss";
 
+
   #player {
-    @include iconeLink(none,0);
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 10px ;
+    background-color: rgba(0,0,0, 0.8);
+    border-radius: 10px;
+    padding: 10px;
     width: 4rem;
     position: absolute;
     left: calc(50% - 2rem);
     right: calc(50% - 2rem);
     cursor: pointer;
+      &:hover{
+        color: #ee82ee;
+      }
+      img {
+        height: 100%;
+        max-width: 3rem;
+        margin-right: 20px;
+      }
   }
 
   #muted {
-    @include iconeLink(none,0);
+    display: inline-block;
+    text-decoration: none;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    margin: 10px ;
+    background-color: rgba(0,0,0, 0.8);
+    border-radius: 10px;
+    padding: 10px;
     color: #999999;
     width: 4rem;
     justify-content: center;
@@ -48,6 +72,15 @@ body {
     z-index: 999;
     background-color: rgba(0,0,0,0.4);
     cursor: pointer;
+      &:hover{
+        color: #ee82ee;
+      }
+
+      img {
+        height: 100%;
+        max-width: 3rem;
+        margin-right: 20px;
+      }
   }
 
 }
