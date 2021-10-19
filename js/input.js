@@ -2,11 +2,17 @@ let cover = document.getElementById("cover");
 let foto = document.getElementById("foto");
 let tempImage = document.getElementById("tempImage");
 cover.onclick = function () { foto.click(); }
-
-document.getElementById("foto").onchange = (evt) => {
+let fotoOK = false;
+foto.onchange = (evt) => {
     const reader = new FileReader();
     reader.onload = function (e) {
-      document.getElementById("tempImage").src = e.target.result;
+      tempImage.src = e.target.result;
+      fotoOK = true;
+      cover.style.backgroundColor = "rgba(0,0,0,0)";
+      cover.style.color = "rgba(0,0,0,0)";
+      if (arredondado) {
+        tempImage.style.borderRadius = "50%";
+      }
     };
     reader.readAsDataURL(evt.target.files[0]);
 };

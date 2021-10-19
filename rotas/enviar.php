@@ -29,9 +29,11 @@ include '../DB/autoload.php';
   if (empty($link)) {
     $linkOK = false;
   }
+
+  echo $foto["type"];
   //verifica se uma imagem foi enviada
     if ($foto['error']==0){
-      $valid=["image/jpeg","image/png","image/jpg"];
+      $valid=["image/jpeg","image/png","image/jpg","image/svg+xml"];
       if (array_search($foto['type'], $valid) === false){exit;}
     } else {
       $fotoOK = false;}
@@ -42,7 +44,7 @@ include '../DB/autoload.php';
           move_uploaded_file($foto['tmp_name'], '../img/' . $photo);
 
           $linkDB->salvar($nome,$link,$photo,$redondo);
-          // header('location: index.php');
+          header('location: index.php');
       }
   }
   /////////////////////////////////////////////////

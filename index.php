@@ -110,19 +110,24 @@
         <img src="./img/jsontojava.png" alt="">
       </a>
 
-      <form action="./rotas/enviar.php" method="post" enctype="multipart/form-data">
-      <div id="cover">Enviar Imagem</div>
-          <button id="imagemInput" type="button" name="imagemInput"><img id="tempImage" src="./img/placeholder.png" alt=""></button>
+      <form id="form" action="./rotas/enviar.php" method="post" enctype="multipart/form-data">
+          <div id="cover">
+              Enviar Ícone +
+          </div>
+          <span class="erro" id="erroFoto"></span>
+          <img id="tempImage" src="./img/placeholder.png" alt="placeholder">
           <div id="linkInput">
             <input id="link" type="text" name="nome" placeholder="Título do site">
             <label for="redondo">
               <input id="redondo" type="checkbox" name="redondo" value="true">
                 Ícone redondo
             </label>
+            <span class="erro" id="erroLink"></span>
             <input id="url" type="text" name="link" placeholder="URL">
+            <span class="erro" id="erroUrl"></span>
           </div>
           <input id="foto" type="file" name="foto">
-          <button id="enviar" type="submit">Enviar</button>
+          <button id="enviar" type="submit">Criar Link</button>
       </form>
 
       </main>
@@ -134,6 +139,7 @@
           <source src="./audio/music.ogg" type="audio/mpeg">
         </audio>
       <div id="muted">\</div>
+    <script type="text/javascript" src="./js/form.js"></script>
     <script type="text/javascript" src="./js/music.js"></script>
     <script type="text/javascript" src="./js/input.js"></script>
   </body>
