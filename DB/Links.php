@@ -13,13 +13,13 @@ class Links extends Connect
         return $query;
     }
 
-    public function salvar($id, $link, $foto) {
+    public function salvar($nome, $link, $foto) {
             $db = self::getInstance();
-            $sql = "INSERT INTO links(id, link, foto) values (:id, :link, :foto)";
+            $sql = "INSERT INTO links(nome, link, foto) values (:nome, :link, :foto)";
 
             $stmt = $db->prepare($sql);
 
-            $stmt->bindValue(":id", $id);
+            $stmt->bindValue(":nome", $nome);
             $stmt->bindValue(":link", $link);
             $stmt->bindValue(":foto", $foto);
 

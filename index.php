@@ -1,11 +1,6 @@
 <?php
-
-  include './DB/autoload.php';
-
   require("./DB/Links.php");
-
-  $linkDB = new \DB\Links();
-  $todoslinks = $linkDB->todos();
+  include './DB/autoload.php';
 ?>
 
 <!DOCTYPE html>
@@ -15,16 +10,23 @@
     <title>Lobby</title>
     <link rel="icon" href="./img/icon.png" >
     <link rel="stylesheet" href="./css/index.css">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
   </head>
   <body>
     <main>
-    <?php foreach ($todoslinks as $links => $link) { ?>
-        <a class="iconeLink" href="<?php echo $link['link'] ?>">
-          <img src="./img/<?php echo $link['foto'] ?> " alt="<?php echo $link['nome'] ?>">
-          <?php echo $link['nome'] ?>
-        </a>
+    <?php
+      $linkDB = new \DB\Links();
+      $todoslinks = $linkDB->todos();
+
+      foreach ($todoslinks as $links => $link) { ?>
+
+          <a class="iconeLink" href="<?php echo $link['link'] ?>">
+            <img src="./img/<?php echo $link['foto'] ?> " alt="<?php echo $link['nome'] ?>">
+            <?php echo $link['nome'] ?>
+          </a>
+
     <?php } ?>
 
       <a id="theuselessweb" href="https://theuselessweb.com">
@@ -106,6 +108,17 @@
         <img src="./img/jsontojava.png" alt="">
       </a>
 
+      <form action="./rotas/enviar.php" method="post" enctype="multipart/form-data">
+
+          <button id="imagemInput" type="button" name="imagemInput"><img src="./img/reactnative.png" alt=""></button>
+          <div id="linkInput">
+            <input id="link" type="text" name="nome" placeholder="Título do site">
+            <input id="url" type="text" name="link" placeholder="URL">
+          </div>
+          <input id="foto" type="file" name="foto">
+          <button id="enviar" type="submit">Enviar</button>
+      </form>
+
       </main>
 
       <div id="player">
@@ -115,14 +128,7 @@
           <source src="./audio/music.ogg" type="audio/mpeg">
         </audio>
       <div id="muted">\</div>
-
-      <form action="index.php" method="post" enctype="multipart/form-data">
-          <input type="text" name="nome">
-          <input type="text" name="link">
-          <input type="image" name="foto">
-          <button type="submit">Enviar</button>
-      </form>
-
     <script type="text/javascript" src="./js/index.js"></script>
+    <script type="text/javascript" src="./js/music.js"></script>
   </body>
 </html>
