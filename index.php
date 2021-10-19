@@ -31,10 +31,10 @@
 
     <?php } ?>
 
-      <a id="theuselessweb" href="https://theuselessweb.com">
+      <!-- <a id="theuselessweb" href="https://theuselessweb.com">
         <img src="./img/theuselessweb.svg" alt="">
         The useless web
-      </a>
+      </a> -->
 
       <a id="outlook" href="https://outlook.office365.com/mail/inbox/id/AAQkADlmZTdjYmZhLTcwOGUtNGVlMi1iNDUwLTdlMWIzYjU0NzZkYgAQAF5ISKAyGXGf5rl517uwRL4%3D">
         <img src="./img/outlook.svg" alt="">
@@ -141,6 +141,5 @@
       <div id="muted">\</div>
     <script type="text/javascript" src="./js/form.js"></script>
     <script type="text/javascript" src="./js/music.js"></script>
-    <script type="text/javascript" src="./js/input.js"></script>
   </body>
 </html>

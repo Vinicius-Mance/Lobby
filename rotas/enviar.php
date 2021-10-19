@@ -44,7 +44,7 @@ include '../DB/autoload.php';
           move_uploaded_file($foto['tmp_name'], '../img/' . $photo);
 
           $linkDB->salvar($nome,$link,$photo,$redondo);
-          header('location: index.php');
+          header('location: ../index.php');
       }
   }
   /////////////////////////////////////////////////
