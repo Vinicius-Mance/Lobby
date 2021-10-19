@@ -16,36 +16,21 @@
   </head>
   <body>
     <main>
-    <?php
-      $linkDB = new \DB\Links();
-      $todoslinks = $linkDB->todos();
 
-      foreach ($todoslinks as $links => $link) { ?>
-        <?php if ($link['redondo']): ?>
+  <?php
+    $linkDB = new \DB\Links();
+    $todoslinks = $linkDB->todos();
+        foreach ($todoslinks as $links => $link): ?>
+            <a class="iconeLink <?php if ($link['redondo']) { echo "redondo"; } ?>" href="<?php echo $link['link'] ?>">
+              <img src="./img/<?php echo $link['foto'] ?> " alt="<?php echo $link['nome'] ?>">
+              <?php echo $link['nome'] ?>
+            </a>
+  <?php endforeach; ?>
 
-        <?php endif; ?>
-          <a class="iconeLink <?php if ($link['redondo']) { echo "redondo"; } ?>" href="<?php echo $link['link'] ?>">
-            <img src="./img/<?php echo $link['foto'] ?> " alt="<?php echo $link['nome'] ?>">
-            <?php echo $link['nome'] ?>
-          </a>
 
-    <?php } ?>
 
-      <!-- <a id="theuselessweb" href="https://theuselessweb.com">
-        <img src="./img/theuselessweb.svg" alt="">
-        The useless web
-      </a> -->
 
-      <a id="outlook" href="https://outlook.office365.com/mail/inbox/id/AAQkADlmZTdjYmZhLTcwOGUtNGVlMi1iNDUwLTdlMWIzYjU0NzZkYgAQAF5ISKAyGXGf5rl517uwRL4%3D">
-        <img src="./img/outlook.svg" alt="">
-          Email FIAP
-      </a>
-
-      <a id="fiap" href="https://www2.fiap.com.br">
-        <img src="./img/fiap.svg" alt="">
-        Portal do aluno
-      </a>
-
+      <!--
       <a id="strobe" href="https://strobe.cool">
         <img src="./img/strobe.png" alt="">
         Strobe illusion
@@ -109,6 +94,12 @@
       <a id="jsontojava" href="https://json2csharp.com">
         <img src="./img/jsontojava.png" alt="">
       </a>
+
+ -->
+     <a class="iconeLink" id="previewLink" href="#" target="_blank">
+       <img id="previewFoto" src="./img/placeholder.png" alt="placeholder">
+        <span id="previewTitulo">Preview</span>
+     </a>
 
       <form id="form" action="./rotas/enviar.php" method="post" enctype="multipart/form-data">
           <div id="cover">
