@@ -33,6 +33,12 @@ body {
       width: 95%;
     }
 
+    .redondo {
+        img {
+          border-radius: 50%;
+        }
+    }
+
     a {
       display: inline-block;
       color: #fff;
@@ -74,24 +80,60 @@ body {
     border-radius: 10px;
     padding: 10px;
 
-    #imagemInput {
-      height: 100%;
+    #cover {
+      position: absolute;
+      font-size: 0.6rem;
+      font-family: sans-serif;
+      padding: 10px;
       width: 3rem;
+      height: 3rem;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      cursor: pointer;
       background-color: rgba(0,0,0,0);
+      color: rgba(0,0,0,0);
+        &:hover{
+          background-color: rgba(0,0,0,0.8);
+          color: #fff;
+        }
+    }
+
+    #imagemInput {
+      height: 3rem;
+      width: 3rem;
+      color: #000;
       border: none;
       cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 4rem;
 
-        img {
-          height: 3rem;
-          width: 100%;
-        }
-
+          img {
+            height: 3rem;
+            width: 3rem;
+          }
     }
 
       #linkInput {
         width: 70%;
+        display: flex;
+        justify-content: space-between;
+        flex-flow: row wrap;
+            label {
+                display: inline-block;
+                width: calc(30% - 20px);
+                color: #fff;
+                font-size: 0.8rem;
+                background-color: rgba(0,0,0, 0.8);
+                height: 2rem;
+                padding: 10px;
+                border-radius: 10px;
+            }
+
             #link {
-              width: 100%;
+              width: 70%;
               background-color: rgba(0,0,0, 0.8);
               color: #fff;
               border: none;

@@ -2,15 +2,6 @@
 require("../DB/Links.php");
 include '../DB/autoload.php';
   $linkDB = new \DB\Links();
-  function novoLink($nome, $link, $foto){
-      $produtos = fetch_pdt();
-
-      $product = ['id'=>$id,'produto'=>$pdt,'preco'=>$preco,'foto'=>$foto,'descricao'=>$descricao];
-      $produtos[]= $product;
-      $data = json_encode($produtos);
-      if($data){file_put_contents('dados/data.json', $data);}
-  }
-
   // //////////////////////////////////////////////
   $nomeOK = true;
   $linkOK = true;
@@ -25,9 +16,18 @@ include '../DB/autoload.php';
   $nome = $_POST['nome'];
   $link = $_POST['link'];
   $foto = $_FILES['foto'];
+  if (empty($_POST['redondo'])) {
+    $redondo = false;
+  } else {
+    $redondo = true;
+  }
   //verifica se o nome foi preenchido
   if (empty($nome)) {
     $nomeOK = false;
+  }
+
+  if (empty($link)) {
+    $linkOK = false;
   }
   //verifica se uma imagem foi enviada
     if ($foto['error']==0){
@@ -40,8 +40,8 @@ include '../DB/autoload.php';
 
           $photo = $nome . ".".pathinfo($foto['name'], PATHINFO_EXTENSION);
           move_uploaded_file($foto['tmp_name'], '../img/' . $photo);
-          echo $photo;
-          $linkDB->salvar($nome,$link,$photo);
+
+          $linkDB->salvar($nome,$link,$photo,$redondo);
           // header('location: index.php');
       }
   }

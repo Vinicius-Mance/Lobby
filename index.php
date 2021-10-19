@@ -21,8 +21,10 @@
       $todoslinks = $linkDB->todos();
 
       foreach ($todoslinks as $links => $link) { ?>
+        <?php if ($link['redondo']): ?>
 
-          <a class="iconeLink" href="<?php echo $link['link'] ?>">
+        <?php endif; ?>
+          <a class="iconeLink <?php if ($link['redondo']) { echo "redondo"; } ?>" href="<?php echo $link['link'] ?>">
             <img src="./img/<?php echo $link['foto'] ?> " alt="<?php echo $link['nome'] ?>">
             <?php echo $link['nome'] ?>
           </a>
@@ -109,10 +111,14 @@
       </a>
 
       <form action="./rotas/enviar.php" method="post" enctype="multipart/form-data">
-
-          <button id="imagemInput" type="button" name="imagemInput"><img src="./img/reactnative.png" alt=""></button>
+      <div id="cover">Enviar Imagem</div>
+          <button id="imagemInput" type="button" name="imagemInput"><img id="tempImage" src="./img/placeholder.png" alt=""></button>
           <div id="linkInput">
             <input id="link" type="text" name="nome" placeholder="Título do site">
+            <label for="redondo">
+              <input id="redondo" type="checkbox" name="redondo" value="true">
+                Ícone redondo
+            </label>
             <input id="url" type="text" name="link" placeholder="URL">
           </div>
           <input id="foto" type="file" name="foto">
@@ -128,7 +134,7 @@
           <source src="./audio/music.ogg" type="audio/mpeg">
         </audio>
       <div id="muted">\</div>
-    <script type="text/javascript" src="./js/index.js"></script>
     <script type="text/javascript" src="./js/music.js"></script>
+    <script type="text/javascript" src="./js/input.js"></script>
   </body>
 </html>
