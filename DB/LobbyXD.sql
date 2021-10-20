@@ -29,13 +29,14 @@ USE `lobbyxd`;
 --
 -- Estrutura da tabela `links`
 --
+DROP TABLE IF EXISTS `links`;
 
-CREATE TABLE `links` (
-  `id` int(11) NOT NULL,
-  `nome` varchar(255) DEFAULT NULL,
-  `link` varchar(255) DEFAULT NULL,
-  `foto` varchar(255) DEFAULT NULL,
-  `redondo` tinyint(1) DEFAULT NULL
+CREATE TABLE IF NOT EXISTS `links`  (
+  `id` int(11) NOT NULL UNIQUE PRIMARY KEY,
+  `nome` varchar(255) DEFAULT "Link não encontrado",
+  `link` varchar(255) DEFAULT "#",
+  `foto` varchar(255) DEFAULT "./img/icons/placeholder.png",
+  `redondo` tinyint(1) DEFAULT false
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --

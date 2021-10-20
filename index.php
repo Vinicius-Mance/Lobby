@@ -26,18 +26,11 @@
               <?php echo $link['nome'] ?>
             </a>
   <?php endforeach; ?>
-<!--  -->
-
 <!--
-    <a id="reactnative" href="http://localhost:19002">
-      <img src="./img/reactnative.png" alt="">
-      Localhost - Native
-    </a>
-
     <a id="jsontojava" href="https://json2csharp.com">
       <img src="./img/jsontojava.png" alt="">
-    </a> -->
-<!--  -->
+    </a>
+ -->
      <a class="iconeLink" id="previewLink" href="#" target="_blank">
        <img id="previewFoto" src="./img/icons/placeholder.png" alt="placeholder">
         <span id="previewTitulo">Preview</span>
