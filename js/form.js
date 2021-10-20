@@ -46,7 +46,7 @@ const imagemPreview = (e) => {
       previewFoto.src = e.target.result;
       fotoOK = true;
       cover.style.backgroundColor = "rgba(0,0,0,0)";
-      cover.style.color = "rgba(0,0,0,0)";
+      cover.innerHTML = "";
       erroFoto.innerHTML = "";
       if (arredondado) {
         tempImage.style.borderRadius = "50%";
