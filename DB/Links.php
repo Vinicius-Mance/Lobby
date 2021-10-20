@@ -2,7 +2,6 @@
 namespace DB;
 require_once("Connect.php");
 
-// use Connect;
 use PDO;
 
 class Links extends Connect
@@ -14,6 +13,7 @@ class Links extends Connect
     }
 
     public function salvar($nome, $link, $foto,$redondo) {
+
             $db = self::getInstance();
             $sql = "INSERT INTO links(nome, link, foto, redondo) values (:nome, :link, :foto, :redondo)";
 

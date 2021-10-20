@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 20-Out-2021 às 04:49
+-- Tempo de geração: 20-Out-2021 às 22:21
 -- Versão do servidor: 10.4.17-MariaDB
 -- versão do PHP: 8.0.2
 
@@ -30,6 +30,7 @@ USE `lobbyxd`;
 -- Estrutura da tabela `links`
 --
 
+DROP TABLE IF EXISTS `links`;
 CREATE TABLE `links` (
   `id` int(11) NOT NULL,
   `nome` varchar(255) DEFAULT 'Link não encontrado',
@@ -63,7 +64,8 @@ INSERT INTO `links` (`id`, `nome`, `link`, `foto`, `redondo`) VALUES
 (18, 'Meu Github', 'https://github.com/Vinicius-Mance', 'Meu Github.svg', 0),
 (19, 'Localhost - React Native', 'http://localhost:19002', 'Localhost - React Native.png', 0),
 (20, 'phpMyAdmin', 'http://localhost/phpmyadmin/', 'phpMyAdmin.png', 0),
-(21, 'PNg Crop Tools', 'https://onlinepngtools.com/crop-png', 'PNg Crop Tools.png', 0);
+(21, 'PNG Crop Tools', 'https://onlinepngtools.com/crop-png', 'PNG Crop Tools.png', 0),
+(22, 'JSONTOJAVA', 'https://json2csharp.com', 'JSONTOJAVA.svg', 0);
 
 --
 -- Índices para tabelas despejadas
@@ -83,7 +85,7 @@ ALTER TABLE `links`
 -- AUTO_INCREMENT de tabela `links`
 --
 ALTER TABLE `links`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

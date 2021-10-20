@@ -19,16 +19,16 @@
     $linkDB = new \DB\Links();
     $todoslinks = $linkDB->todos();
         foreach ($todoslinks as $links => $link): ?>
-            <a class="<?php if ($link['redondo']) { echo "redondo"; } ?>" href="<?php echo $link['link'] ?>" target="_blank">
+            <a class="<?php if ($link['redondo']) { echo "redondo"; } ?>" href="<?php echo $link['link'] ?>"
+              <?php if (!isset($_GET["newtab"])): ?>
+               target="_blank"
+              <?php endif; ?>
+            >
               <img src="./img/<?php echo $link['foto'] ?> " alt="<?php echo $link['nome'] ?>">
               <?php echo $link['nome'] ?>
             </a>
-  <?php endforeach; ?>
-<!--
-    <a id="jsontojava" href="https://json2csharp.com">
-      <img src="./img/jsontojava.png" alt="">
-    </a>
- -->
+        <?php endforeach; ?>
+
     <button type="button" name="adicionarLink" id="adicionarLink">+</button>
 
      <a id="previewLink" href="#" target="_blank">
