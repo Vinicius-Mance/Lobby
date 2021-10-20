@@ -2,7 +2,7 @@
 // invocação de campos do html e variáveis
 let form = document.getElementById('form'); // formulário para criar link
 let adicionarLink = document.getElementById('adicionarLink'); // divisória/botão para adicionar link
-
+let fecharForm = document.getElementById('fecharForm');// botão para fechar formulário
 let link = document.getElementById('link'); // campo do título do link
 let erroLink = document.getElementById('erroLink'); // mensagem de erro do link
 
@@ -60,9 +60,13 @@ const imagemPreview = (e) => {
 const toggleForm = () => {
     if (formOpen) {
       adicionarLink.style.display = "flex";
+      form.style.display = "none";
+      previewLink.style.display = "none";
       formOpen = false;
     } else {
       adicionarLink.style.display = "none";
+      form.style.display = "flex";
+      previewLink.style.display = "flex";
       formOpen = true;
     }
 }
@@ -132,6 +136,9 @@ redondo.onclick = function () { toggleBorder(); }
 
 // abre o formulário para criação de links
 adicionarLink.onclick = function () { toggleForm(); }
+
+// fecha o formulário para ciração de links
+fecharForm.onclick = function () { toggleForm(); }
 
 // mudança de preview de imagem
 foto.onchange = function (e)  { imagemPreview(e); };

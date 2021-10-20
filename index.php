@@ -37,6 +37,7 @@
      </a>
 
       <form id="form" action="./rotas/enviar.php" method="post" enctype="multipart/form-data">
+        <button type="button" id="fecharForm" name="fecharForm">X</button>
           <div id="cover">
               Enviar Ícone +
           </div>

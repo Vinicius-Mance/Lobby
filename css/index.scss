@@ -108,6 +108,26 @@ body {
     border-radius: 10px;
     padding: 10px;
 
+    #fecharForm {
+      display: block;
+      position: relative;
+      width: 1.5rem;
+      height: 1.5rem;
+      margin-left: calc(100% - 2rem);
+      background-color: rgba(0,0,0, 0.8);
+      border-radius: 10px;
+      border: none;
+      color: #fff;
+      font-size: 1rem;
+      font-family: sans-serif;
+      cursor: pointer;
+
+      &:hover {
+        background-color: red;
+      }
+
+    }
+
     .erro {
       width: 100%;
       color: red;
@@ -130,12 +150,11 @@ body {
       font-family: sans-serif;
       padding: 10px;
       width: 3rem;
-      height: calc(3rem + 2px);
+      height: 3rem;
       text-align: center;
       display: flex;
       justify-content: center;
       cursor: pointer;
-      margin-top: 15px;
       background-color: rgba(0,0,0,0.5);
       color: #fff;
       margin-left: 15px;
@@ -150,6 +169,7 @@ body {
         height: 3rem;
         width: 3rem;
         margin-left: 15px;
+        margin-bottom: 40px;
       }
 
 
