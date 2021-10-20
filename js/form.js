@@ -1,6 +1,7 @@
 // CAMPOS
 // invocação de campos do html e variáveis
 let form = document.getElementById('form'); // formulário para criar link
+let adicionarLink = document.getElementById('adicionarLink'); // divisória/botão para adicionar link
 
 let link = document.getElementById('link'); // campo do título do link
 let erroLink = document.getElementById('erroLink'); // mensagem de erro do link
@@ -21,6 +22,7 @@ let previewTitulo = document.getElementById("previewTitulo"); // título em exib
 // DECLARAÇÃO DE FUNÇÕES
 let arredondado = false; // variável para verificar se o ícone será arredondado
 let fotoOK = false; // variável para verificar se uma foto foi enviada
+let formOpen = false; // variável para verificar se o formulário está visível
 // função para colocar/tirar as bordar na preview do ícone
 const toggleBorder = () => {
 
@@ -53,6 +55,16 @@ const imagemPreview = (e) => {
       }
     };
     reader.readAsDataURL(e.target.files[0]);
+}
+// função para mostrar e esconder o formulário de criação de links
+const toggleForm = () => {
+    if (formOpen) {
+      adicionarLink.style.display = "flex";
+      formOpen = false;
+    } else {
+      adicionarLink.style.display = "none";
+      formOpen = true;
+    }
 }
 
 // funcão para validar se campos foram preenchidos e a imagem enviada
@@ -117,6 +129,9 @@ url.onkeyup = function () { mostrarPreviewLink();}
 
 // adiciona bordas ao ícone na preview
 redondo.onclick = function () { toggleBorder(); }
+
+// abre o formulário para criação de links
+adicionarLink.onclick = function () { toggleForm(); }
 
 // mudança de preview de imagem
 foto.onchange = function (e)  { imagemPreview(e); };

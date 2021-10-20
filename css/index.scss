@@ -41,6 +41,28 @@ body {
         }
     }
 
+    #adicionarLink {
+      display: inline-block;
+      color: #fff;
+      height: 4rem;
+      width: calc(33% - 20px);
+      background-color: rgba(0,0,0, 0.8);
+      border-radius: 10px;
+      padding: 10px;
+      margin: 10px;
+      display: flex;
+      align-items: center;
+      justify-content:  center;
+      font-size: 5rem;
+      text-align: center;
+      font-family: fantasy;
+      border: none;
+      cursor: pointer;
+          &:hover {
+              color: #ee82ee;
+          }
+    }
+
     a {
       display: inline-block;
       color: #fff;
@@ -65,6 +87,10 @@ body {
           margin-right: 20px;
         }
 
+    }
+
+    #previewLink, #form {
+      display: none;
     }
 
   }

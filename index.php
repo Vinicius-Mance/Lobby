@@ -8,20 +8,18 @@
   <head>
     <meta charset="utf-8">
     <title>Lobby</title>
-    <link rel="icon" href="./img/icon.png" >
+    <link rel="icon" href="./img/icons/icon.png" >
     <link rel="stylesheet" href="./css/index.css">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
   </head>
   <body>
     <main>
-
   <?php
     $linkDB = new \DB\Links();
     $todoslinks = $linkDB->todos();
         foreach ($todoslinks as $links => $link): ?>
-            <a class="iconeLink <?php if ($link['redondo']) { echo "redondo"; } ?>" href="<?php echo $link['link'] ?>" target="_blank">
+            <a class="<?php if ($link['redondo']) { echo "redondo"; } ?>" href="<?php echo $link['link'] ?>" target="_blank">
               <img src="./img/<?php echo $link['foto'] ?> " alt="<?php echo $link['nome'] ?>">
               <?php echo $link['nome'] ?>
             </a>
@@ -31,7 +29,9 @@
       <img src="./img/jsontojava.png" alt="">
     </a>
  -->
-     <a class="iconeLink" id="previewLink" href="#" target="_blank">
+    <button type="button" name="adicionarLink" id="adicionarLink">+</button>
+
+     <a id="previewLink" href="#" target="_blank">
        <img id="previewFoto" src="./img/icons/placeholder.png" alt="placeholder">
         <span id="previewTitulo">Preview</span>
      </a>
