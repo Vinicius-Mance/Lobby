@@ -32,7 +32,7 @@ USE `lobbyxd`;
 DROP TABLE IF EXISTS `links`;
 
 CREATE TABLE IF NOT EXISTS `links`  (
-  `id` int(11) NOT NULL UNIQUE PRIMARY KEY,
+  `id` int(11) NOT NULL UNIQUE PRIMARY KEY AUTO_INCREMENT,
   `nome` varchar(255) DEFAULT "Link não encontrado",
   `link` varchar(255) DEFAULT "#",
   `foto` varchar(255) DEFAULT "./img/icons/placeholder.png",

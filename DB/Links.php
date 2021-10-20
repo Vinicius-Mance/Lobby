@@ -18,7 +18,6 @@ class Links extends Connect
             $sql = "INSERT INTO links(nome, link, foto, redondo) values (:nome, :link, :foto, :redondo)";
 
             $stmt = $db->prepare($sql);
-
             $stmt->bindValue(":nome", $nome);
             $stmt->bindValue(":link", $link);
             $stmt->bindValue(":foto", $foto);
