@@ -28,8 +28,7 @@
               <?php echo $link['nome'] ?>
             </a>
         <?php endforeach; ?>
-
-    <button type="button" name="adicionarLink" id="adicionarLink">+</button>
+    <a href="#form" id="adicionarLink">+</a>
 
      <a id="previewLink" href="#" target="_blank">
        <img id="previewFoto" src="./img/icons/placeholder.png" alt="placeholder">
@@ -60,7 +59,7 @@
       </main>
 
       <div id="player">
-        <img src="./img/icons/note.png" alt="">
+        ♪
       </div>
         <audio loop id="music">
           <source src="./audio/music.ogg" type="audio/mpeg">
