@@ -55,17 +55,8 @@
           <input id="foto" type="file" name="foto">
           <button id="enviar" type="submit">Criar Link</button>
       </form>
-
       </main>
 
-      <div id="player">
-        ♪
-      </div>
-        <audio loop id="music">
-          <source src="./audio/music.ogg" type="audio/mpeg">
-        </audio>
-      <div id="muted">\</div>
     <script type="text/javascript" src="./js/form.js"></script>
-    <script type="text/javascript" src="./js/music.js"></script>
   </body>
 </html>
