@@ -17,11 +17,12 @@ body {
   background-color: rgba(0,0,0, 0.7);
   background-attachment: fixed;
   background-blend-mode: overlay;
-  font-size: 25px;
+  font-size: 20px;
   background-size: cover;
   height: 110vh;
   @media (max-width: 1000px) {
     background-image: url(../img/bg/retrato.jpg);
+    background-position: center;
   }
 
 
