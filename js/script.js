@@ -1,71 +1,59 @@
-/** help */
-function log(message) {
-    console.log('> ' + message)
-}
+  function sortable(section, onUpdate){
+      var dragEl, nextEl, newPos, dragGhost;
 
-/** app */
-const cards = document.querySelectorAll('.card')
-const dropzones = document.querySelectorAll('.dropzone')
+      let oldPos = [...section.children].map(item => {
+        item.draggable = true
+        let pos = document.getElementById(item.id).getBoundingClientRect();
+        return pos;
+      });
 
+      function _onDragOver(e){
+          e.preventDefault();
+          e.dataTransfer.dropEffect = 'move';
 
-/** our cards */
-cards.forEach(card => {
-    card.addEventListener('dragstart', dragstart)
-    card.addEventListener('drag', drag)
-    card.addEventListener('dragend', dragend)
-})
+          var target = e.target;
+          if(target && target !== dragEl && target.nodeName == 'A' ){
+            if(target.nodeName.toLowerCase() === 'img') {
+              e.stopPropagation();
+            } else {
 
-function dragstart() {
-    // log('CARD: Start dragging ')
-    dropzones.forEach( dropzone => dropzone.classList.add('highlight'))
+            var targetPos = target.getBoundingClientRect();
 
-    // this = card
-    this.classList.add('is-dragging')
-}
+            var next = (e.clientY - targetPos.top) / (targetPos.bottom - targetPos.top) > .5 || (e.clientX - targetPos.left) / (targetPos.right - targetPos.left) > .5;
+              section.insertBefore(dragEl, next && target.nextSibling || target);
 
-function drag() {
-    // log('CARD: Is dragging ')
-}
+              }
+          }
+      }
 
-function dragend() {
-    // log('CARD: Stop drag! ')
-    dropzones.forEach( dropzone => dropzone.classList.remove('highlight'))
+      function _onDragEnd(evt){
+          evt.preventDefault();
+          newPos = [...section.children].map(child => {
+               let pos = document.getElementById(child.id).getBoundingClientRect();
+               return pos;
+             });
+          dragEl.classList.remove('ghost');
+          section.removeEventListener('dragover', _onDragOver, false);
+          section.removeEventListener('dragend', _onDragEnd, false);
 
-    // this = card
-    this.classList.remove('is-dragging')
-}
+          nextEl !== dragEl.nextSibling ? onUpdate(dragEl) : false;
+      }
 
-/** place where we will drop cards */
-dropzones.forEach( dropzone => {
-    dropzone.addEventListener('dragenter', dragenter)
-    dropzone.addEventListener('dragover', dragover)
-    dropzone.addEventListener('dragleave', dragleave)
-    dropzone.addEventListener('drop', drop)
-})
+        section.addEventListener('dragstart', function(e){
+          dragEl = e.target;
+          nextEl = dragEl.nextSibling;
 
-function dragenter() {
-    // log('DROPZONE: Enter in zone ')
-}
+          e.dataTransfer.effectAllowed = 'move';
+          e.dataTransfer.setData('Text', dragEl.textContent);
 
-function dragover() {
-    // this = dropzone
-    this.classList.add('over')
+          section.addEventListener('dragover', _onDragOver, false);
+          section.addEventListener('dragend', _onDragEnd, false);
 
-    // get dragging card
-    const cardBeingDragged = document.querySelector('.is-dragging')
+          setTimeout(function (){
+              dragEl.classList.add('ghost');
+          }, 0)
 
-    // this = dropzone
-    this.appendChild(cardBeingDragged)
-}
+      });
+  }
 
-function dragleave() {
-    // log('DROPZONE: Leave ')
-    // this = dropzone
-    this.classList.remove('over')
-
-}
-
-function drop() {
-    // log('DROPZONE: dropped ')
-    this.classList.remove('over')
-}
+  sortable( document.querySelector("main"), function (item){});

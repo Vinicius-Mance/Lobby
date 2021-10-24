@@ -27,9 +27,10 @@ body {
   main {
     width: 90%;
     margin: 20px auto;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content:  flex-start;
+    display: grid;
+    grid-gap: 15px;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     @media (max-width: 1000px){
       width: 95%;
     }
@@ -51,15 +52,13 @@ body {
     }
 
     a {
-      display: inline-block;
       color: #fff;
       text-decoration: none;
       height: 4rem;
-      width: calc(33% - 10px);
+      width: 100%;
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      margin: 5px;
       border-radius: 20px 0;
       padding: 10px;
       background-color: rgba(17, 8, 73, 0.8);
@@ -83,14 +82,14 @@ body {
 
      #form {
         display: none;
+        grid-area:  span 2 /span 3 /span 4;
     }
 
   }
 
   form {
-    display: inline-block;
     height: 100%;
-    width: calc(100% - 20px);
+    width: 100%;
     display: flex;
     flex-flow: row wrap;
     align-items: center;
@@ -162,7 +161,7 @@ body {
         height: 3rem;
         width: 3rem;
         margin-left: 15px;
-        margin-bottom: 40px;
+        margin-bottom: 53px;
       }
 
 
