@@ -32,7 +32,7 @@ body main {
   margin: 20px auto;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 @media (max-width: 1000px) {
   body main {
@@ -50,7 +50,6 @@ body main #adicionarLink {
   text-align: center;
   font-family: fantasy;
   cursor: pointer;
-  margin-right: auto;
 }
 body main a {
   display: inline-block;

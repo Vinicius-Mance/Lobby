@@ -29,7 +29,7 @@ body {
     margin: 20px auto;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content:  flex-start;
     @media (max-width: 1000px){
       width: 95%;
     }
@@ -48,7 +48,6 @@ body {
       text-align: center;
       font-family: fantasy;
       cursor: pointer;
-      margin-right: auto;
     }
 
     a {
@@ -60,7 +59,7 @@ body {
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      margin: 5px ;
+      margin: 5px;
       border-radius: 20px 0;
       padding: 10px;
       background-color: rgba(17, 8, 73, 0.8);
