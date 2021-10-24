@@ -14,12 +14,13 @@
     </head>
   </head>
   <body>
-    <main>
+    <main class="dropzone">
   <?php
     $linkDB = new \DB\Links();
     $todoslinks = $linkDB->todos();
         foreach ($todoslinks as $links => $link): ?>
-            <a class="<?php if ($link['redondo']) { echo "redondo"; } ?>" href="<?php echo $link['link'] ?>"
+        <!-- <div class="dropzone"> -->
+            <a class="card <?php if ($link['redondo']) { echo "redondo"; } ?>" href="<?php echo $link['link'] ?>"
               <?php if (!isset($_GET["newtab"])): ?>
                target="_blank"
               <?php endif; ?>
@@ -27,10 +28,11 @@
               <img src="./img/<?php echo $link['foto'] ?> " alt="<?php echo $link['nome'] ?>">
               <?php echo $link['nome'] ?>
             </a>
+        <!-- </div> -->
         <?php endforeach; ?>
     <a href="#form" id="adicionarLink">+</a>
 
-     <a id="previewLink" href="#" target="_blank">
+     <a class="" id="previewLink" href="#" target="_blank">
        <img id="previewFoto" src="./img/icons/placeholder.png" alt="placeholder">
         <span id="previewTitulo">Preview</span>
      </a>
@@ -58,5 +60,6 @@
       </main>
 
     <script type="text/javascript" src="./js/form.js"></script>
+    <script type="text/javascript" src="./js/script.js"></script>
   </body>
 </html>
