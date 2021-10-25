@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 20-Out-2021 às 22:21
+-- Tempo de geração: 25-Out-2021 às 22:37
 -- Versão do servidor: 10.4.17-MariaDB
 -- versão do PHP: 8.0.2
 
@@ -20,7 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `lobbyxd`
 --
-DROP DATABASE IF EXISTS `lobbyxd`;
 CREATE DATABASE IF NOT EXISTS `lobbyxd` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `lobbyxd`;
 
@@ -65,7 +64,8 @@ INSERT INTO `links` (`id`, `nome`, `link`, `foto`, `redondo`) VALUES
 (19, 'Localhost - React Native', 'http://localhost:19002', 'Localhost - React Native.png', 0),
 (20, 'phpMyAdmin', 'http://localhost/phpmyadmin/', 'phpMyAdmin.png', 0),
 (21, 'PNG Crop Tools', 'https://onlinepngtools.com/crop-png', 'PNG Crop Tools.png', 0),
-(22, 'JSONTOJAVA', 'https://json2csharp.com', 'JSONTOJAVA.svg', 0);
+(22, 'JSONTOJAVA', 'https://json2csharp.com', 'JSONTOJAVA.svg', 0),
+(23, 'Netflix', 'https://www.netflix.com/browse', 'Netflix.svg', 0);
 
 --
 -- Índices para tabelas despejadas
@@ -85,7 +85,7 @@ ALTER TABLE `links`
 -- AUTO_INCREMENT de tabela `links`
 --
 ALTER TABLE `links`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

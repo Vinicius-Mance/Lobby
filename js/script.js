@@ -1,57 +1,64 @@
-  function sortable(section, onUpdate){
-      var dragEl, nextEl, newPos, dragGhost;
+//função fruncipal
+//container -> container pai
+//onUpdate -> parâmetro usado para invocar inumeras funções sequencialmente
+function sortable(container, onUpdate){
+      var dragElement, nextElement;
 
-      let oldPos = [...section.children].map(item => {
+      [...container.children].map(item => {
         item.draggable = true
         let pos = document.getElementById(item.id).getBoundingClientRect();
         return pos;
       });
 
-      function _onDragOver(e){
-          e.preventDefault();
-          e.dataTransfer.dropEffect = 'move';
+      function onDragOver(event){
 
-          var target = e.target;
-          if(target && target !== dragEl && target.nodeName == 'A' ){
-            if(target.nodeName.toLowerCase() === 'img') {
-              e.stopPropagation();
-            } else {
+          event.preventDefault();
+
+          event.dataTransfer.dropEffect = 'move';
+
+          var target = event.target;
+
+          if(target && target !== dragElement && target.nodeName == 'A' ){
+
+
 
             var targetPos = target.getBoundingClientRect();
 
-            var next = (e.clientY - targetPos.top) / (targetPos.bottom - targetPos.top) > .5 || (e.clientX - targetPos.left) / (targetPos.right - targetPos.left) > .5;
-              section.insertBefore(dragEl, next && target.nextSibling || target);
+            let next;
 
-              }
+            if ( (event.clientY - targetPos.top) / (targetPos.bottom - targetPos.top) > .5
+              || (event.clientX - targetPos.left) / (targetPos.right - targetPos.left) > .5) {
+                next = true;
+            } else {
+                next = false;
+            }
+
+              container.insertBefore(dragElement, next && target.nextSibling || target);
+
           }
       }
 
-      function _onDragEnd(evt){
+      function onDragEnd(evt){
           evt.preventDefault();
-          newPos = [...section.children].map(child => {
+          [...container.children].map(child => {
                let pos = document.getElementById(child.id).getBoundingClientRect();
                return pos;
              });
-          dragEl.classList.remove('ghost');
-          section.removeEventListener('dragover', _onDragOver, false);
-          section.removeEventListener('dragend', _onDragEnd, false);
+          container.removeEventListener('dragover', onDragOver, false);
+          container.removeEventListener('dragend', onDragEnd, false);
 
-          nextEl !== dragEl.nextSibling ? onUpdate(dragEl) : false;
+          nextElement !== dragElement.nextSibling ? onUpdate(dragElement) : false;
       }
 
-        section.addEventListener('dragstart', function(e){
-          dragEl = e.target;
-          nextEl = dragEl.nextSibling;
+        container.addEventListener('dragstart', function(e){
+          dragElement = e.target;
+          nextElement = dragElement.nextSibling;
 
           e.dataTransfer.effectAllowed = 'move';
-          e.dataTransfer.setData('Text', dragEl.textContent);
+          e.dataTransfer.setData('Text', dragElement.textContent);
 
-          section.addEventListener('dragover', _onDragOver, false);
-          section.addEventListener('dragend', _onDragEnd, false);
-
-          setTimeout(function (){
-              dragEl.classList.add('ghost');
-          }, 0)
+          container.addEventListener('dragover', onDragOver, false);
+          container.addEventListener('dragend', onDragEnd, false);
 
       });
   }
