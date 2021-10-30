@@ -33,7 +33,7 @@ include '../DB/autoload.php';
   echo $foto["type"];
   //verifica se uma imagem foi enviada
     if ($foto['error']==0){
-      $valid=["image/jpeg","image/png","image/jpg","image/svg+xml"];
+      $valid=["image/jpeg","image/png","image/jpg","image/svg+xml", "image/x-icon"];
       if (array_search($foto['type'], $valid) === false){exit;}
     } else {
       $fotoOK = false;}

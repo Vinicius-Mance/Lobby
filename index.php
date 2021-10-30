@@ -19,10 +19,11 @@
     $linkDB = new \DB\Links();
     $todoslinks = $linkDB->todos();
         foreach ($todoslinks as $links => $link): ?>
-            <a id="<?php echo $link['nome'] ?> "  class="<?php if ($link['redondo']) { echo "redondo"; } ?>" href="<?php echo $link['link'] ?>"
-              <?php if (!isset($_GET["newtab"])): ?>
-               target="_blank"
+            <a id="<?php echo $link['nome'] ?>"
+              <?php if ($link['redondo']): ?>
+                class="redondo"
               <?php endif; ?>
+              href="<?php echo $link['link'] ?>"
             >
               <img draggable="false" src="./img/<?php echo $link['foto'] ?> " alt="<?php echo $link['nome'] ?>">
               <?php echo $link['nome'] ?>
