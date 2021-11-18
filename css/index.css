@@ -15,7 +15,7 @@
 
 body {
   background-image: url(../img/bg/paisagem.jpeg);
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.85);
   background-attachment: fixed;
   background-blend-mode: overlay;
   font-size: 20px;
@@ -46,9 +46,10 @@ body main #adicionarLink {
   text-align: center;
   font-family: fantasy;
   cursor: pointer;
+  box-shadow: inset 0 0 0.1em 0 #ff14bd, 0 0 0.1em 0 #ff14bd;
 }
 body main a {
-  color: #fff;
+  color: #ff14bd;
   text-decoration: none;
   height: 4.5rem;
   width: 100%;
@@ -57,16 +58,19 @@ body main a {
   justify-content: flex-start;
   border-radius: 20px 0;
   padding: 10px;
-  background-color: rgba(17, 8, 73, 0.8);
-  box-shadow: 3px 4px 2px 2px rgba(0, 0, 0, 0.9);
-}
-body main a:hover {
-  color: #ff6000;
+  border: #ff14bd solid 0.125rem;
+  text-shadow: 0 0 0.125em rgba(255, 255, 255, 0.3), 0 0 0.45em currentColor;
+  box-shadow: inset 0 0 0.5em 0 #ff14bd, 0 0 0.5em 0 #ff14bd;
 }
 body main a img {
   height: 3rem;
   max-width: 3rem;
   margin-right: 20px;
+}
+body main a:hover, body main a:focus {
+  color: #fff;
+  background-color: #ff14bd;
+  text-shadow: none;
 }
 body main #previewLink {
   display: none;
@@ -84,8 +88,8 @@ body form {
   align-items: center;
   justify-content: space-between;
   margin: 10px;
-  background-color: rgba(17, 8, 73, 0.8);
-  box-shadow: 3px 4px 2px 2px rgba(0, 0, 0, 0.9);
+  border: solid 0.125rem #ff14bd;
+  box-shadow: inset 0 0 0.5em 0 #ff14bd, 0 0 0.5em 0 #ff14bd;
   border-radius: 20px 0;
   padding: 10px;
 }
@@ -95,20 +99,23 @@ body form #fecharForm {
   width: 1.5rem;
   height: 1.5rem;
   margin-left: calc(100% - 2rem);
-  background-color: rgba(0, 0, 0, 0.8);
-  border-radius: 10px;
-  border: none;
-  color: #fff;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 10px 0;
+  border: #ff14bd solid 0.125rem;
+  text-shadow: 0 0 0.125em rgba(255, 255, 255, 0.3), 0 0 0.45em currentColor;
+  box-shadow: inset 0 0 0.5em 0 #ff14bd, 0 0 0.5em 0 #ff14bd;
+  color: #ff14bd;
   font-size: 1rem;
   font-family: sans-serif;
   cursor: pointer;
 }
 body form #fecharForm:hover {
-  background-color: red;
+  color: #fff;
+  background-color: #ff14bd;
 }
 body form .erro {
   width: 100%;
-  color: red;
+  color: #ff14bd;
   margin-left: 20px;
   font-size: 0.7rem;
   height: 0.7rem;
@@ -157,16 +164,22 @@ body form #linkInput label {
   width: calc(30% - 20px);
   color: #fff;
   font-size: 0.7rem;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0);
+  border: #ff14bd solid 0.125rem;
+  text-shadow: 0 0 0.125em rgba(255, 255, 255, 0.3), 0 0 0.45em currentColor;
+  box-shadow: inset 0 0 0.5em 0 #ff14bd, 0 0 0.5em 0 #ff14bd;
+  color: #ff14bd;
   height: 2rem;
   padding: 10px;
   border-radius: 20px 0;
 }
 body form #linkInput #link {
   width: 70%;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: #fff;
-  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  border: #ff14bd solid 0.125rem;
+  box-shadow: inset 0 0 0.5em 0 #ff14bd, 0 0 0.5em 0 #ff14bd;
+  color: #ff14bd;
+  border: solid 0.125rem #ff14bd;
   padding-left: 10px;
   height: 2rem;
   border-radius: 20px 0;
@@ -175,9 +188,11 @@ body form #linkInput #link {
 }
 body form #linkInput #url {
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: #fff;
-  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  border: #ff14bd solid 0.125rem;
+  box-shadow: inset 0 0 0.5em 0 #ff14bd, 0 0 0.5em 0 #ff14bd;
+  color: #ff14bd;
+  border: solid 0.125rem #ff14bd;
   padding-left: 10px;
   height: 2rem;
   border-radius: 20px 0;
@@ -190,15 +205,19 @@ body form #enviar {
   height: 4rem;
   padding: 10px;
   font-size: 1rem;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: #fff;
-  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  border: #ff14bd solid 0.125rem;
+  text-shadow: 0 0 0.125em rgba(255, 255, 255, 0.3), 0 0 0.45em currentColor;
+  box-shadow: inset 0 0 0.5em 0 #ff14bd, 0 0 0.5em 0 #ff14bd;
+  color: #ff14bd;
+  border: solid 1px #ff14bd;
   border-radius: 20px 0;
   margin-right: 20px;
   cursor: pointer;
 }
 body form #enviar:hover {
-  color: #ff6000;
+  color: #fff;
+  background-color: #ff14bd;
 }
 
 /*# sourceMappingURL=index.css.map */
