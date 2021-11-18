@@ -1,11 +1,11 @@
-@font-face { font-family: Edo; src: url('../fonts/EdoSZ.ttf'); }
+@font-face { font-family: Pacifico; src: url('../fonts/Pacifico.ttf'); }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   transition: 0.2s;
-  font-family: Edo;
+  font-family: Pacifico;
     &:focus{
         outline: none;
     }
@@ -181,14 +181,14 @@ body {
                 display: inline-block;
                 width: calc(30% - 20px);
                 color: #fff;
-                font-size: 0.7rem;
+                font-size: 1rem;
                 background-color: rgba(0,0,0, 0);
                 border: $principal solid 0.125rem;
                 text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
                 box-shadow: inset 0 0 0.5em 0 $principal, 0 0 0.5em 0 $principal;
                 color: $principal;
                 height: 2rem;
-                padding: 10px;
+                padding: 0 10px;
                 border-radius: 20px 0;
             }
 
@@ -218,7 +218,6 @@ body {
               border-radius: 20px 0;
               margin-left: 10px;
             }
-
     }
         #foto {
           display: none;
