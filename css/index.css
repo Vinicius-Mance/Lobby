@@ -130,7 +130,7 @@ body form #erroFoto {
 body form #cover {
   position: absolute;
   font-size: 0.6rem;
-  font-family: sans-serif;
+  line-height: 1.4;
   padding: 10px;
   width: 3rem;
   height: 3rem;
@@ -143,8 +143,8 @@ body form #cover {
   margin-left: 15px;
 }
 body form #cover:hover {
-  background-color: rgba(0, 0, 0, 0.7);
-  color: #ff6000;
+  background-color: #ff14bd;
+  color: #fff;
 }
 body form #tempImage {
   display: block;
