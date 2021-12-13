@@ -15,12 +15,17 @@
 
 body {
   background-image: url(../img/bg/paisagem.jpeg);
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(0, 0, 0, 0.6);
   background-attachment: fixed;
   background-blend-mode: overlay;
   font-size: 20px;
   background-size: cover;
-  background-position: center;
+}
+@media (max-width: 1000px) {
+  body {
+    background-image: url(../img/bg/retrato.jpg);
+    background-position: center;
+  }
 }
 body main {
   width: 90%;
