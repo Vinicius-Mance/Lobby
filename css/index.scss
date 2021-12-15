@@ -11,12 +11,9 @@
     }
 }
 
-$principal: hsl(317 100% 54%);
-$background: rgba(0,0,0, 0.85);
-
 body {
   background-image: url(../img/bg/paisagem.jpeg);
-  background-color: rgba(0,0,0, 0.6);
+  background-color: rgba(0,0,0, 0.7);
   background-attachment: fixed;
   background-blend-mode: overlay;
   font-size: 20px;
@@ -52,11 +49,10 @@ body {
       text-align: center;
       font-family: fantasy;
       cursor: pointer;
-      box-shadow: inset 0 0 0.1em 0 hsl(317 100% 54%), 0 0 0.1em 0 hsl(317 100% 54%);
     }
 
     a {
-      color: $principal;
+      color: #fff;
       text-decoration: none;
       height: 4.5rem;
       width: 100%;
@@ -65,9 +61,11 @@ body {
       justify-content: flex-start;
       border-radius: 20px 0;
       padding: 10px;
-      border: $principal solid 0.125rem;
-      text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
-      box-shadow: inset 0 0 0.5em 0 $principal, 0 0 0.5em 0 $principal;
+      background-color: rgba(17, 8, 73, 0.8);
+      box-shadow: 3px 4px 2px 2px rgba(0,0,0,0.9);
+        &:hover{
+          color: #ff6000;
+        }
 
         img {
           height: 3rem;
@@ -75,12 +73,6 @@ body {
           margin-right: 20px;
         }
 
-        &:hover,
-        &:focus {
-          color: #fff;
-          background-color: $principal;
-          text-shadow: none;
-        }
     }
 
     #previewLink {
@@ -103,8 +95,8 @@ body {
     align-items: center;
     justify-content: space-between;
     margin: 10px ;
-    border: solid 0.125rem $principal;
-    box-shadow: inset 0 0 0.5em 0 $principal, 0 0 0.5em 0 $principal;
+    background-color: rgba(17, 8, 73, 0.8);
+    box-shadow: 3px 4px 2px 2px rgba(0,0,0,0.9);
     border-radius: 20px 0;
     padding: 10px;
 
@@ -114,26 +106,23 @@ body {
       width: 1.5rem;
       height: 1.5rem;
       margin-left: calc(100% - 2rem);
-      background-color: rgba(0,0,0,0);
-      border-radius: 10px 0;
-      border: $principal solid 0.125rem;
-      text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
-      box-shadow: inset 0 0 0.5em 0 $principal, 0 0 0.5em 0 $principal;
-      color: $principal;
+      background-color: rgba(0,0,0, 0.8);
+      border-radius: 10px;
+      border: none;
+      color: #fff;
       font-size: 1rem;
       font-family: sans-serif;
       cursor: pointer;
 
       &:hover {
-        color: #fff;
-        background-color: $principal;
+        background-color: red;
       }
 
     }
 
     .erro {
       width: 100%;
-      color: $principal;
+      color: red;
       margin-left: 20px;
       font-size: 0.7rem;
       height: 0.7rem;
@@ -185,12 +174,8 @@ body {
                 display: inline-block;
                 width: calc(30% - 20px);
                 color: #fff;
-                font-size: 1rem;
-                background-color: rgba(0,0,0, 0);
-                border: $principal solid 0.125rem;
-                text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
-                box-shadow: inset 0 0 0.5em 0 $principal, 0 0 0.5em 0 $principal;
-                color: $principal;
+                font-size: 0.7rem;
+                background-color: rgba(0,0,0, 0.8);
                 height: 2rem;
                 padding: 0 10px;
                 border-radius: 20px 0;
@@ -198,11 +183,9 @@ body {
 
             #link {
               width: 70%;
-              background-color: rgba(0,0,0, 0);
-              border: $principal solid 0.125rem;
-              box-shadow: inset 0 0 0.5em 0 $principal, 0 0 0.5em 0 $principal;
-              color: $principal;
-              border: solid 0.125rem $principal;
+              background-color: rgba(0,0,0, 0.8);
+              color: #fff;
+              border: none;
               padding-left: 10px;
               height: 2rem;
               border-radius: 20px 0;
@@ -212,11 +195,9 @@ body {
 
             #url {
               width: 100%;
-              background-color: rgba(0,0,0, 0);
-              border: $principal solid 0.125rem;
-              box-shadow: inset 0 0 0.5em 0 $principal, 0 0 0.5em 0 $principal;
-              color: $principal;
-              border: solid 0.125rem $principal;
+              background-color: rgba(0,0,0, 0.8);
+              color: #fff;
+              border: none;
               padding-left: 10px;
               height: 2rem;
               border-radius: 20px 0;
@@ -231,18 +212,14 @@ body {
           height: 4rem;
           padding: 10px;
           font-size: 1rem;
-          background-color: rgba(0,0,0,0);
-          border: $principal solid 0.125rem;
-          text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
-          box-shadow: inset 0 0 0.5em 0 $principal, 0 0 0.5em 0 $principal;
-          color: $principal;
-          border: solid 1px $principal;
+          background-color: rgba(0,0,0,0.8);
+          color: #fff;
+          border: none;
           border-radius: 20px 0;
           margin-right: 20px;
           cursor: pointer;
             &:hover{
-              color: #fff;
-              background-color: $principal;
+              color: #ff6000;
             }
         }
     }
