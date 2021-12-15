@@ -23,8 +23,7 @@ body {
 }
 @media (max-width: 1000px) {
   body {
-    background-image: url(../img/bg/retrato.jpg);
-    background-position: center;
+    background-image: url(../img/bg/retrato.jpeg);
   }
 }
 body main {
