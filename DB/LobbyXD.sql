@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 27-Nov-2021 às 03:46
+-- Tempo de geração: 29-Mar-2022 às 16:14
 -- Versão do servidor: 10.4.17-MariaDB
 -- versão do PHP: 8.0.2
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `lobbyxd`
 --
-CREATE DATABASE IF NOT EXISTS `lobbyxd` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `lobbyxd`;
 
 -- --------------------------------------------------------
 
@@ -29,6 +27,7 @@ USE `lobbyxd`;
 -- Estrutura da tabela `links`
 --
 
+DROP TABLE IF EXISTS `links`;
 CREATE TABLE `links` (
   `id` int(11) NOT NULL,
   `nome` varchar(255) DEFAULT 'Link não encontrado',
@@ -67,7 +66,9 @@ INSERT INTO `links` (`id`, `nome`, `link`, `foto`, `redondo`) VALUES
 (23, 'Netflix', 'https://www.netflix.com/browse', 'Netflix.svg', 0),
 (24, 'Minecraft Skin Editor', 'https://www.minecraftskins.com/skin-editor/', 'Minecraft Skin Editor.ico', 0),
 (25, 'Convertio', 'https://convertio.co/pt/', 'Convertio.png', 1),
-(26, 'Pinterest', 'http://pinterest.com', 'Pinterest.png', 0);
+(26, 'Pinterest', 'http://pinterest.com', 'Pinterest.png', 0),
+(27, 'Calculadora de Moedas', 'http://localhost/calculadora/index.html', 'Calculadora de Moedas.svg', 0),
+(28, 'LinkedIn', 'https://www.linkedin.com/in/vinicius-rodrigues-76226a1a3/', 'LinkedIn.svg', 0);
 
 --
 -- Índices para tabelas despejadas
@@ -87,7 +88,7 @@ ALTER TABLE `links`
 -- AUTO_INCREMENT de tabela `links`
 --
 ALTER TABLE `links`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
