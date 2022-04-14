@@ -1,5 +1,10 @@
 @font-face { font-family: Edo; src: url('../fonts/EdoSZ.ttf'); }
 
+$textMainColor: #fff;
+$textSubColor: #ff6000;
+$boxMainColor: rgba(255, 0, 0, 0.4);
+$boxSubColor: rgba(0,0,0,0.9);
+
 * {
   margin: 0;
   padding: 0;
@@ -22,7 +27,6 @@ body {
     background-image: url(../img/bg/retrato.jpeg);
   }
 
-
   main {
     width: 90%;
     margin: 20px auto;
@@ -36,7 +40,7 @@ body {
 
     .redondo {
         img {
-          border-radius: 50%;
+          border-radius: 1.5rem;
         }
     }
 
@@ -51,7 +55,7 @@ body {
     }
 
     a {
-      color: #fff;
+      color: $textMainColor;
       text-decoration: none;
       height: 4.5rem;
       width: 100%;
@@ -60,10 +64,10 @@ body {
       justify-content: flex-start;
       border-radius: 20px 0;
       padding: 10px;
-      background-color: rgba(255, 0, 0, 0.4);
-      box-shadow: 3px 4px 2px 2px rgba(0,0,0,0.9);
+      background-color: $boxMainColor;
+      box-shadow: 3px 4px 2px 2px $boxSubColor;
         &:hover{
-          color: #ff6000;
+          color: $textSubColor;
         }
 
         img {
@@ -94,8 +98,8 @@ body {
     align-items: center;
     justify-content: space-between;
     margin: 10px ;
-    background-color: rgba(255, 0, 0, 0.4);
-    box-shadow: 3px 4px 2px 2px rgba(0,0,0,0.9);
+    background-color: $boxMainColor;
+    box-shadow: 3px 4px 2px 2px $boxSubColor;
     border-radius: 20px 0;
     padding: 10px;
 
@@ -105,10 +109,10 @@ body {
       width: 1.5rem;
       height: 1.5rem;
       margin-left: calc(100% - 2rem);
-      background-color: rgba(0,0,0, 0.8);
+      background-color: $boxSubColor;
       border-radius: 10px;
       border: none;
-      color: #fff;
+      color: $textMainColor;
       font-size: 1rem;
       font-family: sans-serif;
       cursor: pointer;
@@ -147,11 +151,11 @@ body {
       justify-content: center;
       cursor: pointer;
       background-color: rgba(0,0,0,0.5);
-      color: #fff;
+      color: $textMainColor;
       margin-left: 15px;
         &:hover{
-          background-color: #ff6000;
-          color: #fff;
+          background-color: $textSubColor;
+          color: $textMainColor;
         }
     }
 
@@ -163,7 +167,6 @@ body {
         margin-bottom: 53px;
       }
 
-
       #linkInput {
         width: 70%;
         display: flex;
@@ -172,9 +175,9 @@ body {
             label {
                 display: inline-block;
                 width: calc(30% - 20px);
-                color: #fff;
+                color: $textMainColor;
                 font-size: 0.7rem;
-                background-color: rgba(0,0,0, 0.8);
+                background-color: $boxSubColor;
                 height: 2rem;
                 padding: 10px;
                 border-radius: 20px 0;
@@ -182,8 +185,8 @@ body {
 
             #link {
               width: 70%;
-              background-color: rgba(0,0,0, 0.8);
-              color: #fff;
+              background-color: $boxSubColor;
+              color: $textMainColor;
               border: none;
               padding-left: 10px;
               height: 2rem;
@@ -194,8 +197,8 @@ body {
 
             #url {
               width: 100%;
-              background-color: rgba(0,0,0, 0.8);
-              color: #fff;
+              background-color: $boxSubColor;
+              color: $textMainColor;
               border: none;
               padding-left: 10px;
               height: 2rem;
@@ -212,14 +215,14 @@ body {
           height: 4rem;
           padding: 10px;
           font-size: 1rem;
-          background-color: rgba(0,0,0,0.8);
-          color: #fff;
+          background-color: $boxSubColor;
+          color: $textMainColor;
           border: none;
           border-radius: 20px 0;
           margin-right: 20px;
           cursor: pointer;
             &:hover{
-              color: #ff6000;
+              color: $textSubColor;
             }
         }
     }
